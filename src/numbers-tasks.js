@@ -176,8 +176,9 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  const poweredTenner = 10 ** pow;
+  return Math.round(num / poweredTenner) * poweredTenner;
 }
 
 /**
@@ -248,8 +249,12 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  const fibArr = [0, 1];
+  for (let i = 2; i <= index; i += 1) {
+    fibArr.push(fibArr[i - 1] + fibArr[i - 2]);
+  }
+  return fibArr[index];
 }
 
 /**
